@@ -6,6 +6,8 @@ Four roommates have a habit of borrowing money from each other frequently, and h
 
 Your task is to implement a simple [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer) that receives [IOU](https://en.wikipedia.org/wiki/IOU)s as POST requests, and can deliver specified summary information via GET requests.
 
+The routes and the data contracts will be shared before hand. The routes and implementations will be tested using provided xUnit tests. It all will be written in C# in a non specific Api framework.
+
 ### API Specification
 
 #### User object
@@ -21,7 +23,7 @@ Your task is to implement a simple [RESTful API](https://en.wikipedia.org/wiki/R
     "Bob": 6.5,
     "Dan": 2.75,
   },
-  "balance": "<(total owed by other users) - (total owed to other users)>"
+  "balance": <(total owed by other users) - (total owed to other users)>
 }
 ```
 
@@ -33,11 +35,6 @@ Your task is to implement a simple [RESTful API](https://en.wikipedia.org/wiki/R
 | Create user | POST | /add | `{"user":<name of new user (unique)>}` | N/A | `<User object for new user>` |
 | Create IOU | POST | /iou | `{"lender":<name of lender>,"borrower":<name of borrower>,"amount":5.25}` | N/A | `{"users":<updated User objects for <lender> and <borrower> (sorted by name)>}` |
 
-### Other Resources:
-- https://restfulapi.net/
-- Example RESTful APIs
-  - [GitHub](https://developer.github.com/v3/)
-  - [Reddit](https://www.reddit.com/dev/api/)
 ### Running the tests
 
 To run the tests, run the command `dotnet test` from within the challenge directory.
@@ -46,20 +43,5 @@ Initially, only the first test will be enabled. This is to encourage you to solv
 Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
 Once none of the tests are skipped and they are all passing, you can submit your solution.
 
-### Evaluation Criteria
-
-- C# best practices
-- Show us your work through your commit history
-- Completeness: did you complete the features? Are all the tests running?
-- Correctness: does the functionality act in sensible, thought-out ways?
-- Maintainability: is it written in a clean, maintainable way?
-
-
-### CodeSubmit
-
-Please organize, design, and document your code as if it were going into production - then push your changes 
-to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
-
-All the best and happy coding,
-
-The Infoland BV Team
+### Original
+The original assignment was a take home assignment from code submit. We are currently trying out a pair programming assignment as a way of selecting candidates
